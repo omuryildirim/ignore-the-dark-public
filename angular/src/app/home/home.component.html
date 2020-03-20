@@ -1,0 +1,67 @@
+<div class="main">
+  <div class="element" (click)="navigateToSubPage('about')">
+    {{"About" | localize}}
+  </div>
+
+  <div class="element" (click)="navigateToSubPage('works')">
+      {{"Works" | localize}}
+  </div>
+
+  <div class="mind-button" (click)="navigateToSubPage('mind')">
+      {{"Mind" | localize }}
+  </div>
+
+  <div class="content about" [class.active]="location == '/about'">
+      <div class="close" (click)="navigateToSubPage('')">X</div>
+      <div class="quote">
+        {{"About__Quote" | localize }}
+      </div>
+      <div class="main__container">
+          <div class="header">{{"About the philosophy" | localize }}</div>
+          <span [innerHTML]="'philosophy_exp' | localize "></span>
+      </div>
+      <div class="main__container">
+          <div class="header">{{"About_Current_Level" | localize }}</div>
+          <div>
+            <span>
+              {{"current_level_exp" | localize}}
+            </span>
+          </div>
+          <div class="box active">
+              <div class="header">{{"Education" | localize }}</div>
+              <ul>
+                  <li *ngFor="let edu of currentLevelExpEducationList">{{edu | localize}}</li>
+              </ul>
+              <div class="header">{{"Papers & Awards" | localize }}</div>
+              <ul>
+                  <li *ngFor="let paper of papersAndAwards" [innerHTML]="paper | localize"></li>
+              </ul>
+              <div class="header">{{"Interests" | localize }}</div>
+              <ul>
+                  <li *ngFor="let interest of currentLevelExpInterestsList">{{interest | localize}}</li>
+              </ul>
+          </div>
+
+          <div class="cv-holder">
+            <a class="clear" href="../../public/img/CV.png" target="_blank">See CV</a>
+          </div>
+      </div>
+  </div>
+
+  <div class="content works" [class.active]="location == '/works'" [class.work-selected]="selectedWork">
+    <div class="close" (click)="selectWork('')">X</div>
+    <div class="work-selections" *ngIf="!selectedWork">
+      <div class="work-text" *ngFor="let work of works" (click)="selectWork(work)">
+        {{work | localize}}
+      </div>
+    </div>
+    <app-music *ngIf="selectedWork === 'Music'"></app-music>
+  </div>
+  <app-photography *ngIf="selectedWork == 'Photography'"></app-photography>
+
+  <div class="select__language">
+      <a class="translate__button" (click)="languageService.switchLanguage()">
+        {{"language" | localize}}
+      </a>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+{
+  "/translates":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/getMovieList":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/addItemToMovieList":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/editMovieList":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/removeItemFromMovieList":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/getarticles":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/getEvents":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/addNewEvent":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/removeSelectedEvent":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/getDirection":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/api/*":{
+    "target":"http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

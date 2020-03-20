@@ -1,0 +1,21 @@
+.story {
+  white-space: pre-line;
+}
+
+.mat-dialog-content {
+  .story {
+    text-align: justify;
+  }
+
+  .instruments {
+    float: initial;
+
+    h4 {
+      margin-bottom: 0;
+    }
+
+    .instrument {
+      float: initial;
+    }
+  }
+}

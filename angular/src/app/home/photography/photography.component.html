@@ -1,0 +1,23 @@
+<div #viewer class="photography-view" (keydown)="changePicture($event)">
+  <img *ngIf="selectedPhotography"
+       [src]="selectedPhotographyData" />
+  <div *ngIf="selectedPhotography" class="exif">
+    <table class="information">
+      <tr *ngFor="let infoKey of photographyConstants.exifKeys">
+        <td class="key">{{photographyConstants.exifKeyLabels[infoKey]}}:</td>
+        <td class="value">{{photoData[selectedPhotography][infoKey]}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div #gallery class="photography" [class.selected]="selectedPhotography" (mousewheel)="onScroll($event)" (keydown)="changePicture($event)">
+  <ng-container *ngIf="photoData">
+    <img *ngFor="let name of photoNames"
+          src="../../../../../photography/thumbnails/{{name}}"
+          [class.selected]="selectedPhotography === name"
+          (click)="selectPhoto(name)" />
+  </ng-container>
+</div>
+<div class="close return-button">
+  <span (click)="goBack()">{{"Return" | localize}}</span>
+</div>
