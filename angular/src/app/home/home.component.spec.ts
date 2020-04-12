@@ -31,7 +31,7 @@ describe('Home Component', () => {
 
     expect(homeComponent.selectedWork).toEqual('Test Work');
     expect(mockRouter.navigateByUrl.mock.calls.length).toEqual(1);
-    expect(mockRouter.navigateByUrl.mock.calls[0]).toEqual('/test work');
+    expect(mockRouter.navigateByUrl.mock.calls[0]).toEqual(['/test work']);
   });
 
   it('should navigate to sub page', () => {
@@ -39,7 +39,7 @@ describe('Home Component', () => {
     homeComponent.navigateToSubPage('test sub page');
 
     expect(mockRouter.navigateByUrl.mock.calls.length).toEqual(1);
-    expect(mockRouter.navigateByUrl.mock.calls[0]).toEqual('/test sub page');
+    expect(mockRouter.navigateByUrl.mock.calls[0]).toEqual(['/test sub page']);
     expect(mockLocation.path.mock.calls.length).toEqual(1);
     expect(homeComponent.location).toEqual('mock location');
   });

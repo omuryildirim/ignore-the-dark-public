@@ -27,11 +27,11 @@ describe('Mind Component', () => {
     mindComponent['navigateToDefaultPath']();
 
     expect(mockRouter.navigate.mock.calls.length).toEqual(1);
-    expect(mockRouter.navigate.mock.calls[0]).toEqual([['/test sub page']]);
+    expect(mockRouter.navigate.mock.calls[0]).toEqual([['/']]);
   });
 
   it('should select article', () => {
-    mindComponent.articles = {1: {'e': {header: 'mock article header'}}} as any;
+    mindComponent.articles = {1: {'en': {header: 'mock article header'}}} as any;
 
     mindComponent['selectArticle'](1);
 

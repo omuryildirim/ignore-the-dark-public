@@ -16,6 +16,6 @@ describe('Mind Component', () => {
     mindService.getArticles();
 
     expect(mockHttpClient.get.mock.calls.length).toEqual(1);
-    expect(mockHttpClient.get.mock.calls[0]).toEqual('../../public/data/articles.json');
+    expect(mockHttpClient.get.mock.calls[0]).toEqual(['../../public/data/articles.json']);
   });
 });
