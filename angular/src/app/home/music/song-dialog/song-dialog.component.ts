@@ -1,6 +1,6 @@
-import {Component, Inject, OnInit, ViewEncapsulation} from "@angular/core";
-import {MAT_DIALOG_DATA} from "@angular/material";
-import {MusicConstants} from "../music.constants";
+import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material';
+import {MusicConstants} from '../music.constants';
 
 export interface SongData {
   name: string;
@@ -8,19 +8,19 @@ export interface SongData {
 }
 
 @Component({
-  selector: "app-song-dialog",
+  selector: 'app-song-dialog',
   encapsulation: ViewEncapsulation.None,
-  templateUrl: "./song-dialog.component.html",
-  styleUrls: ["./song-dialog.component.scss"],
+  templateUrl: './song-dialog.component.html',
+  styleUrls: ['./song-dialog.component.scss'],
 })
 
-export class SongDialogComponent implements OnInit {
+export class SongDialogComponent {
   public musicConstants = MusicConstants;
 
+  /**
+   * Initializer.
+   * @param data
+   */
   constructor(@Inject(MAT_DIALOG_DATA) public data: SongData) {
   }
-
-  ngOnInit() {
-  }
-
 }

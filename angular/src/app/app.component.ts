@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import {LanguageService} from "./shared/services/language.service";
+import {Component} from '@angular/core';
+import {LanguageService} from './shared/services/language.service';
 
 @Component({
-  selector: 'ignore-the-dark', // <my-app></my-app>
+  // tslint:disable-next-line:component-selector
+  selector: 'ignore-the-dark',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

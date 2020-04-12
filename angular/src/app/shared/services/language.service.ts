@@ -1,9 +1,9 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class LanguageService {
-  private _language: string = "en";
+  private _language = 'en';
   public translations: {[key: string]: string};
 
   /**
@@ -24,17 +24,17 @@ export class LanguageService {
   }
 
   public switchLanguage() {
-    if (this.language === "tr") {
-      this.language = "en";
+    if (this.language === 'tr') {
+      this.language = 'en';
     } else {
-      this.language = "tr";
+      this.language = 'tr';
     }
   }
 
   private setTranslation() {
-    let url = "../../../public/data/translations.json";
-    if (this.language === "en") {
-      url = "../../../public/data/translations_en.json";
+    let url = '../../../public/data/translations.json';
+    if (this.language === 'en') {
+      url = '../../../public/data/translations_en.json';
     }
 
     this.httpClient.get(url)

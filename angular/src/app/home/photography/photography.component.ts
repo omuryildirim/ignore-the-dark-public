@@ -1,21 +1,21 @@
-import {AfterViewInit, Component, HostListener, OnInit, ViewChild, ViewEncapsulation} from "@angular/core";
-import {Router} from "@angular/router";
-import {DomSanitizer} from "@angular/platform-browser";
-import {PhotographyService} from "./photography.service";
-import {PhotoData} from "../../../../../nodejs/src/interfaces/photo.interfaces";
-import {PhotographyConstants} from "./photography.model";
+import {AfterViewInit, Component, HostListener, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Router} from '@angular/router';
+import {DomSanitizer} from '@angular/platform-browser';
+import {PhotographyService} from './photography.service';
+import {PhotoData} from '../../../../../nodejs/src/interfaces/photo.interfaces';
+import {PhotographyConstants} from './photography.model';
 
 @Component({
-  selector: "app-photography",
+  selector: 'app-photography',
   encapsulation: ViewEncapsulation.None,
-  templateUrl: "./photography.component.html",
-  styleUrls: ["./photography.component.scss"],
+  templateUrl: './photography.component.html',
+  styleUrls: ['./photography.component.scss'],
   providers: [PhotographyService]
 })
 
 export class PhotographyComponent implements OnInit, AfterViewInit {
-  @ViewChild("gallery", {static: false}) gallery;
-  @ViewChild("viewer", {static: false}) viewer;
+  @ViewChild('gallery', {static: false}) gallery;
+  @ViewChild('viewer', {static: false}) viewer;
 
   public photoData: {[key: string]: PhotoData};
   public photoNames: string[];
@@ -24,10 +24,19 @@ export class PhotographyComponent implements OnInit, AfterViewInit {
   private selectedPhotographyData: any;
   private photoLoaded = false;
 
+  /**
+   * Initializer.
+   * @param router
+   * @param sanitizer
+   * @param photographyService
+   */
   constructor(private router: Router, private sanitizer: DomSanitizer,
               private photographyService: PhotographyService) {
   }
 
+  /**
+   * Fetch photography data on creation.
+   */
   ngOnInit() {
     this.photographyService.getPhotoData()
       .subscribe((data: PhotoData[]) => {
@@ -41,7 +50,11 @@ export class PhotographyComponent implements OnInit, AfterViewInit {
       });
   }
 
-  @HostListener("mousewheel", ["$event"])
+  /**
+   * Subscribe mousewheel action and change selected photo respectively.
+   * @param event
+   */
+  @HostListener('mousewheel', ['$event'])
   onScroll(event: WheelEvent) {
     if (this.gallery) {
       this.gallery.nativeElement.scrollLeft = this.gallery.nativeElement.scrollLeft + event.deltaY;
@@ -49,7 +62,11 @@ export class PhotographyComponent implements OnInit, AfterViewInit {
     return false;
   }
 
-  @HostListener("window:keydown", ["$event"])
+  /**
+   * Subscribe key down event and select previous picture.
+   * @param event
+   */
+  @HostListener('window:keydown', ['$event'])
   public changePicture(event: KeyboardEvent) {
     if (event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39
       || event.keyCode === 40) {
@@ -73,12 +90,16 @@ export class PhotographyComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /**
+   * Displat desired photo.
+   * @param photo: Name of photo.
+   */
   private selectPhoto(photo: string) {
     this.selectedPhotography = photo;
 
     if (!this.photoLoaded) {
-      this.selectedPhotographyData = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEklEQVR4" +
-        "2mNU+8+AFzCOKgADAJetClfoY2QoAAAAAElFTkSuQmCC";
+      this.selectedPhotographyData = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEklEQVR4' +
+        '2mNU+8+AFzCOKgADAJetClfoY2QoAAAAAElFTkSuQmCC';
       this.photoLoaded = true;
       this.photographyService.getPhoto(photo).subscribe((data) => {
         setTimeout(() => {
@@ -88,28 +109,34 @@ export class PhotographyComponent implements OnInit, AfterViewInit {
       });
 
     } else {
-      this.selectedPhotographyData = "/photography/" + photo;
+      this.selectedPhotographyData = '/photography/' + photo;
     }
   }
 
+  /**
+   * Return to default path.
+   */
   public goBack() {
-    this.router.navigate(["/"]);
+    this.router.navigate(['/']);
   }
 
+  /**
+   * Initialize view style after html is rendered.
+   */
   ngAfterViewInit() {
     let width = window.innerWidth;
     const height = window.innerHeight;
     const additionalArea = width % 320;
     width = width - additionalArea;
-    this.gallery.nativeElement.style.width = width + "px";
-    this.gallery.nativeElement.style.marginLeft = (additionalArea / 2) + "px";
-    this.gallery.nativeElement.style.marginTop = (height - 180 - additionalArea / 2) + "px";
+    this.gallery.nativeElement.style.width = width + 'px';
+    this.gallery.nativeElement.style.marginLeft = (additionalArea / 2) + 'px';
+    this.gallery.nativeElement.style.marginTop = (height - 180 - additionalArea / 2) + 'px';
 
     const additionalVerticalArea = (height - 90 - additionalArea / 2) % 90;
     const viewerHeight = height - 90 - additionalArea / 2 - additionalVerticalArea;
-    this.viewer.nativeElement.style.height = viewerHeight + "px";
-    this.viewer.nativeElement.style.top = (additionalVerticalArea / 2) + "px";
-    this.viewer.nativeElement.style.left = (additionalArea / 2) + "px";
-    this.viewer.nativeElement.style.right = (additionalArea / 2) + "px";
+    this.viewer.nativeElement.style.height = viewerHeight + 'px';
+    this.viewer.nativeElement.style.top = (additionalVerticalArea / 2) + 'px';
+    this.viewer.nativeElement.style.left = (additionalArea / 2) + 'px';
+    this.viewer.nativeElement.style.right = (additionalArea / 2) + 'px';
   }
 }

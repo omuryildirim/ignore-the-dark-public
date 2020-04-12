@@ -3,15 +3,14 @@
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
     "baseUrl": "./",
-    "module": "commonjs",
     "types": [
-      "jasmine",
-      "node"
+      "jest",
+      "node",
+      "leaflet"
     ]
   },
   "files": [
-    "test.ts",
-    "polyfills.ts"
+    "polyfills.ts",
   ],
   "include": [
     "**/*.spec.ts",

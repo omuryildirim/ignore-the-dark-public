@@ -1,12 +1,11 @@
+import {Pipe, PipeTransform} from '@angular/core';
+import {LanguageService} from '../services/language.service';
+
 /**
  * Usage: dateString | localDate:'format'
  **/
-
-import {Pipe, PipeTransform} from '@angular/core';
-import {LanguageService} from "../services/language.service";
-
 @Pipe({
-  name: "localize",
+  name: 'localize',
   pure: false
 })
 export class LocalizationPipe implements PipeTransform {
