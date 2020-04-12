@@ -1,5 +1,5 @@
-import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import {Component, Inject, ViewEncapsulation} from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MusicConstants} from '../music.constants';
 
 export interface SongData {

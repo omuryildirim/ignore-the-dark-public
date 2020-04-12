@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import * as Vivus from 'vivus';
 import {MusicConstants} from './music.constants';
-import {MatDialog} from '@angular/material';
+import {MatDialog} from '@angular/material/dialog';
 import {SongDialogComponent} from './song-dialog/song-dialog.component';
 
 @Component({
