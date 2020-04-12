@@ -1,7 +1,7 @@
 import {mockHttpClient} from '../../shared/constants/test.constants';
 import {MindService} from './mind.service';
 
-describe('Mind Component', () => {
+describe('Mind Service', () => {
   let mindService: MindService;
   beforeEach(() => {
     mindService = new MindService(mockHttpClient);

@@ -29,8 +29,7 @@ export class PhotographyComponent implements OnInit, AfterViewInit {
    * @param sanitizer
    * @param photographyService
    */
-  constructor(private router: Router, private sanitizer: DomSanitizer,
-              private photographyService: PhotographyService) {
+  constructor(private router: Router, private sanitizer: DomSanitizer, private photographyService: PhotographyService) {
   }
 
   /**

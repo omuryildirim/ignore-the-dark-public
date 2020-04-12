@@ -11,7 +11,7 @@ import {LanguageService} from '../services/language.service';
 export class LocalizationPipe implements PipeTransform {
 
   /**
-   * Initializer/
+   * Initializer.
    * @param languageService
    */
   constructor(private languageService: LanguageService) {
@@ -19,7 +19,7 @@ export class LocalizationPipe implements PipeTransform {
 
   /**
    * Transform text to local string.
-   * @param value
+   * @param value: Translation text.
    */
   transform(value: string) {
     return this.languageService.translations[value] || value;

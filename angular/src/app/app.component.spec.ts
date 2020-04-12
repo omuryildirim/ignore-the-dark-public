@@ -2,7 +2,7 @@ import {AppComponent} from './app.component';
 import {mockLanguageService} from './shared/constants/test.constants';
 
 
-describe('AppComponent', () => {
+describe('App Component', () => {
   let appComponent: AppComponent;
   beforeEach(() => {
     appComponent = new AppComponent(mockLanguageService);
