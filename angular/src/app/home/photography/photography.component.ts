@@ -14,8 +14,8 @@ import {PhotographyConstants} from './photography.model';
 })
 
 export class PhotographyComponent implements OnInit, AfterViewInit {
-  @ViewChild('gallery', {static: false}) gallery;
-  @ViewChild('viewer', {static: false}) viewer;
+  @ViewChild('gallery') gallery;
+  @ViewChild('viewer') viewer;
 
   public photoData: {[key: string]: PhotoData};
   public photoNames: string[];
