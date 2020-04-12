@@ -68,6 +68,13 @@ export class MusicComponent implements OnInit {
     const intervalName = theme ? 'ossifyInterval' : 'dualitiesInterval';
     const circleIntervalName = theme ? 'ossifyIntervalCircle' : 'dualitiesIntervalCircle';
 
+    let c, d, e, f,
+      n = ['0, 173, 239', '0, 128, 95', '246, 129, 33', '154, 37, 142', '248, 237, 0'], m = '255,255,255', o = 0;
+
+    // tslint:disable-next-line:no-unused-expression
+    const g = window, h = (g.event, document), i = h.createElement('canvas'), j = [], k = g.innerWidth,
+      l = g.innerHeight;
+
     const a = () => {
       e.clearRect(0, 0, k, l);
       for (let index = 0; index < j.length; index++) {
@@ -91,12 +98,6 @@ export class MusicComponent implements OnInit {
       const element = {x: c, y: d, r: 10, o: .3, color: m};
       j.push(element);
     };
-
-    let c, d, e, f,
-      n = ['0, 173, 239', '0, 128, 95', '246, 129, 33', '154, 37, 142', '248, 237, 0'], m = '255,255,255', o = 0;
-    // tslint:disable-next-line:no-unused-expression
-    const g = window, h = (g.event, document), i = h.createElement('canvas'), j = [], k = g.innerWidth,
-      l = g.innerHeight;
 
     if (theme === 'dark') {
       n = ['66, 63, 58'];

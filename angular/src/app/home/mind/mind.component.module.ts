@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {MindComponent} from './mind.component';
 import {MindService} from './mind.service';
-import {PipesModule} from "../../shared/pipes.module";
-import {CommonModule} from "@angular/common";
+import {PipesModule} from '../../shared/pipes.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   imports: [

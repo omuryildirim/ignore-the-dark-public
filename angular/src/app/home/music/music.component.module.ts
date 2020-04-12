@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {PipesModule} from '../../shared/pipes.module';
 import {MusicComponent} from './music.component';
 import {SongDialogComponentModule} from './song-dialog/song-dialog.component.module';
-import {CommonModule} from "@angular/common";
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   imports: [
