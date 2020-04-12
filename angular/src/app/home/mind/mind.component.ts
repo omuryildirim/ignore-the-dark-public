@@ -7,8 +7,7 @@ import {MindService} from './mind.service';
   selector: 'app-mind',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './mind.component.html',
-  styleUrls: ['./mind.component.scss', '../home.component.scss'],
-  providers: [MindService]
+  styleUrls: ['./mind.component.scss', '../home.component.scss']
 })
 
 export class MindComponent implements OnInit {

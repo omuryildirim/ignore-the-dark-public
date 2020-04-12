@@ -3,6 +3,7 @@ import * as Vivus from 'vivus';
 import {MusicConstants} from './music.constants';
 import {MatDialog} from '@angular/material/dialog';
 import {SongDialogComponent} from './song-dialog/song-dialog.component';
+import Timeout = NodeJS.Timeout;
 
 @Component({
   selector: 'app-music',
@@ -15,11 +16,11 @@ export class MusicComponent implements OnInit {
   @ViewChild('musicContainer', {static: true}) musicContainer: ElementRef;
 
   public albumSelection = '';
-  private existenceInterval: number;
-  private dualitiesInterval: number;
-  private dualitiesIntervalCircle: number;
-  private ossifyInterval: number;
-  private ossifyIntervalCircle: number;
+  private existenceInterval: Timeout;
+  private dualitiesInterval: Timeout;
+  private dualitiesIntervalCircle: Timeout;
+  private ossifyInterval: Timeout;
+  private ossifyIntervalCircle: Timeout;
 
   public simpleRepetitionsParticles;
   public musicConstants = MusicConstants;

@@ -33,11 +33,14 @@
 
   <ng-container *ngFor="let album of musicConstants.albums">
     <ng-container *ngIf="album.name === albumSelection">
-      <particles *ngIf="album.name === 'Simple Repetitions'"
+      <!--
+          TODO: Waiting Angular Particle to update for Angular Ivy
+          <particles *ngIf="album.name === 'Simple Repetitions'"
                  [params]="simpleRepetitionsParticles"
                  [width]="100"
                  [height]="100"
                  [style]="musicConstants.particleStyle"></particles>
+       -->
 
       <div class="album-container">
         <div class="album-story">

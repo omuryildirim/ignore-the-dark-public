@@ -9,8 +9,7 @@ import {PhotographyConstants} from './photography.model';
   selector: 'app-photography',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './photography.component.html',
-  styleUrls: ['./photography.component.scss'],
-  providers: [PhotographyService]
+  styleUrls: ['./photography.component.scss']
 })
 
 export class PhotographyComponent implements OnInit, AfterViewInit {
