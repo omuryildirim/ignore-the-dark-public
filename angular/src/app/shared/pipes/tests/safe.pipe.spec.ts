@@ -6,6 +6,7 @@ describe('Safe Pipe', () => {
   let safePipe: SafePipe;
   beforeEach(() => {
     safePipe = new SafePipe(mockDomSanitizer);
+    jest.clearAllMocks();
   });
 
   it('should construct', () => {

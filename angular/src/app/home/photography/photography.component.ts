@@ -49,11 +49,11 @@ export class PhotographyComponent implements OnInit, AfterViewInit {
   }
 
   /**
-   * Subscribe mousewheel action and change selected photo respectively.
+   * Subscribe mousewheel action and scroll through thumbnails.
    * @param event
    */
   @HostListener('mousewheel', ['$event'])
-  onScroll(event: WheelEvent) {
+  scrollThroughThumbnails(event: WheelEvent) {
     if (this.gallery) {
       this.gallery.nativeElement.scrollLeft = this.gallery.nativeElement.scrollLeft + event.deltaY;
     }
@@ -89,7 +89,7 @@ export class PhotographyComponent implements OnInit, AfterViewInit {
   }
 
   /**
-   * Displat desired photo.
+   * Display desired photo.
    * @param photo: Name of photo.
    */
   private selectPhoto(photo: string) {

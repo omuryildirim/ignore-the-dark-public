@@ -10,7 +10,7 @@
     </table>
   </div>
 </div>
-<div #gallery class="photography" [class.selected]="selectedPhotography" (mousewheel)="onScroll($event)" (keydown)="changePicture($event)">
+<div #gallery class="photography" [class.selected]="selectedPhotography" (mousewheel)="scrollThroughThumbnails($event)" (keydown)="changePicture($event)">
   <ng-container *ngIf="photoData">
     <img *ngFor="let name of photoNames"
           src="../../../../../photography/thumbnails/{{name}}"

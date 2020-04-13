@@ -228,4 +228,7 @@ export class MusicConstants {
       instruments: ['Piano', 'Flute', 'Cello', 'Trombone']
     }
   };
+
+  public static bubbleColors = ['0, 173, 239', '0, 128, 95', '246, 129, 33', '154, 37, 142', '248, 237, 0'];
+  public static darkBubbleColor = ['66, 63, 58'];
 }

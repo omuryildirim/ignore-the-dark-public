@@ -6,6 +6,7 @@ describe('Localization Pipe', () => {
   let localizationPipe: LocalizationPipe;
   beforeEach(() => {
     localizationPipe = new LocalizationPipe(mockLanguageService);
+    jest.clearAllMocks();
   });
 
   it('should construct', () => {

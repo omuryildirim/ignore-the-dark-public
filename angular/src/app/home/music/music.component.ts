@@ -4,6 +4,7 @@ import {MusicConstants} from './music.constants';
 import {MatDialog} from '@angular/material/dialog';
 import {SongDialogComponent} from './song-dialog/song-dialog.component';
 import Timeout = NodeJS.Timeout;
+import {VivusOptions} from 'vivus';
 
 @Component({
   selector: 'app-music',
@@ -65,53 +66,30 @@ export class MusicComponent implements OnInit {
    */
   private bubbleEffect(theme: string) {
     this.clearIntervals();
-    const intervalName = theme ? 'ossifyInterval' : 'dualitiesInterval';
-    const circleIntervalName = theme ? 'ossifyIntervalCircle' : 'dualitiesIntervalCircle';
 
-    let c, d, e, f,
-      n = ['0, 173, 239', '0, 128, 95', '246, 129, 33', '154, 37, 142', '248, 237, 0'], m = '255,255,255', o = 0;
+    const canvas = document.createElement('canvas'),
+      bubbleList = [];
 
-    // tslint:disable-next-line:no-unused-expression
-    const g = window, h = (g.event, document), i = h.createElement('canvas'), j = [], k = g.innerWidth,
-      l = g.innerHeight;
+    this.musicContainer.nativeElement.append(canvas);
+    if (canvas.getContext) {
+      const twoDimensionalContext = canvas.getContext('2d');
+      const containerWidth = this.musicContainer.nativeElement.offsetWidth + 40, defaultHeight = 637;
+      twoDimensionalContext.canvas.width = containerWidth;
+      twoDimensionalContext.canvas.height = defaultHeight;
+      twoDimensionalContext.canvas.style.position = 'absolute';
+      twoDimensionalContext.canvas.style.top = '0 px';
+      twoDimensionalContext.canvas.style.left = '0 px';
+      twoDimensionalContext.canvas.style.zIndex = '-1';
 
-    const a = () => {
-      e.clearRect(0, 0, k, l);
-      for (let index = 0; index < j.length; index++) {
-        f = j[index].r, e.fillStyle = 'rgba(' + j[index].color + ',' + j[index].o + ')', e.beginPath(), e.arc(j[index].x, j[index].y, f,
-          0, 2 * Math.PI, !0), j[index].r++;
+      const intervalName = theme ? 'ossifyInterval' : 'dualitiesInterval';
+      const circleIntervalName = theme ? 'ossifyIntervalCircle' : 'dualitiesIntervalCircle';
+      this[intervalName] = setInterval(() => {
+        MusicComponent.createBackground(twoDimensionalContext, bubbleList);
+      }, 20);
 
-        if (f > l / 7) {
-          j[index].o -= .005;
-        }
-
-        if (j[index].o <= -3) {
-          j.splice(index, 1);
-        }
-
-        e.fill();
-      }
-    };
-
-    const b = () => {
-      m = n[o % n.length], o++;
-      const element = {x: c, y: d, r: 10, o: .3, color: m};
-      j.push(element);
-    };
-
-    if (theme === 'dark') {
-      n = ['66, 63, 58'];
-    }
-
-    this.musicContainer.nativeElement.append(i);
-    if (i.getContext) {
-      e = i.getContext('2d');
-      const p = this.musicContainer.nativeElement.offsetWidth + 40, q = 637;
-      e.canvas.width = p, e.canvas.height = q, e.canvas.style.position = 'absolute', e.canvas.style.top = 0,
-        e.canvas.style.left = 0, e.canvas.style.zIndex = -1, this[intervalName] = setInterval(() => {
-        a();
-      }, 20), this[circleIntervalName] = setInterval(function () {
-        d = Math.random() * q, c = Math.random() * p, b();
+      let occurrence = 0;
+      this[circleIntervalName] = setInterval(function () {
+        occurrence = MusicComponent.createBubble(occurrence, defaultHeight, containerWidth, theme, bubbleList);
       }, 1e3);
     }
   }
@@ -146,45 +124,29 @@ export class MusicComponent implements OnInit {
       this.clearIntervals();
       this.albumSelection = 'Existence';
 
-      const b = [620, 960];
-      let c = 0, d = 0;
+      let stickId = 0, previousStickId = 0;
+
+      /*
+       * Create a stick every second.
+       */
       this.existenceInterval = setInterval(() => {
         const xmlns = 'http://www.w3.org/2000/svg';
-        const stick = document.createElementNS(xmlns, 'svg');
-        stick.id = 'timing' + c;
-        stick.setAttribute('x', '0px');
-        stick.setAttribute('y', '0px');
-        stick.setAttribute('enable-background', 'new 0 0 200 200');
-        const stroke = document.createElementNS(xmlns, 'g');
-        stick.setAttribute('stroke-width', '1');
-        stick.setAttribute('stroke-linecap', 'round');
-        stick.setAttribute('stroke-miterlimit', '10');
-
-        const path = document.createElementNS(xmlns, 'path');
-        if (c % 2) {
-          path.setAttribute('d', 'M' + Math.round(Math.random() * b[c % 2]) + ',0v620');
-          path.setAttribute('style', 'stroke-dasharray: \'620, 622\'');
-        } else {
-          path.setAttribute('d', 'M0,' + Math.round(Math.random() * b[c % 2]) + 'h960');
-          path.setAttribute('style', 'stroke-dasharray: \'960, 962\'');
-        }
-        stroke.appendChild(path);
+        const stick = MusicComponent.createStick(xmlns, stickId);
+        const stroke = MusicComponent.createStroke(xmlns, stickId);
         stick.appendChild(stroke);
 
         this.musicContainer.nativeElement.querySelector('.album-container').append(stick);
-        const f: any = {
-          type: 'delayed',
-          duration: 1e3,
-          start: 'autostart',
-          pathTimingFunction: Vivus.LINEAR,
-          animTimingFunction: Vivus.LINEAR
-        };
-        // tslint:disable-next-line:no-unused-expression
-        new Vivus('timing' + c, f);
-        c++;
-        const selectedSVG = this.musicContainer.nativeElement.querySelector('#timing' + d);
+
+        MusicComponent.createVivus(stickId);
+
+        stickId += 1;
+        const selectedSVG = this.musicContainer.nativeElement.querySelector('#timing' + previousStickId);
         selectedSVG.setAttribute('class', 'opacity');
-        d++;
+        previousStickId += 1;
+
+        /*
+         * Put fade out effect after 10 seconds of appearance. Remove stick after 11 seconds.
+         */
         setTimeout(() => {
           selectedSVG.setAttribute('style', 'opacity: 0');
           setTimeout(() => {
@@ -262,5 +224,122 @@ export class MusicComponent implements OnInit {
       ariaLabel: 'dark',
       data: {name: songName, songsConstant: constantName}
     });
+  }
+
+  /**
+   * Create bubble effect background and randomize bubbles.
+   * @param twoDimensionalContext: Canvas of background.
+   * @param bubbleList: List of bubbles.
+   */
+  private static createBackground(twoDimensionalContext: CanvasRenderingContext2D,
+                                  bubbleList: { x: number, y: number, r: number, o: number, color: string }[]) {
+    const windowInnerWidth = window.innerWidth,
+      windowInnerHeight = window.innerHeight;
+
+    twoDimensionalContext.clearRect(0, 0, windowInnerWidth, windowInnerHeight);
+    for (let index = 0; index < bubbleList.length; index++) {
+      const radius = bubbleList[index].r;
+      twoDimensionalContext.fillStyle = 'rgba(' + bubbleList[index].color + ',' + bubbleList[index].o + ')';
+      twoDimensionalContext.beginPath();
+      twoDimensionalContext.arc(bubbleList[index].x, bubbleList[index].y, radius, 0, 2 * Math.PI, true);
+      bubbleList[index].r += 1;
+
+      if (radius > windowInnerHeight / 7) {
+        bubbleList[index].o -= .005;
+      }
+
+      if (bubbleList[index].o <= -3) {
+        bubbleList.splice(index, 1);
+      }
+
+      twoDimensionalContext.fill();
+    }
+  }
+
+  /**
+   * Create a random bubble.
+   * @param occurrence
+   * @param theme
+   * @param defaultHeight
+   * @param containerWidth
+   * @param bubbleList
+   * @returns {number}
+   */
+  private static createBubble(occurrence: number, defaultHeight: number, containerWidth: number, theme: string,
+                              bubbleList: { x: number, y: number, r: number, o: number, color: string }[]): number {
+    const colorList = theme === 'dark' ? MusicConstants.darkBubbleColor : MusicConstants.bubbleColors;
+    const randomVerticalPosition = Math.random() * defaultHeight;
+    const randomHorizontalPosition = Math.random() * containerWidth;
+    const bubbleColor = colorList[occurrence % colorList.length];
+    const element = {x: randomHorizontalPosition, y: randomVerticalPosition, r: 10, o: .3, color: bubbleColor};
+    bubbleList.push(element);
+    return occurrence + 1;
+  }
+
+  /**
+   * Create a stick.
+   * @param xmlns: Name space url.
+   * @param id: Id of stick.
+   * @returns {Element}
+   */
+  private static createStick(xmlns: string, id: number): Element {
+    const stick = document.createElementNS(xmlns, 'svg');
+    stick.id = 'timing' + id;
+    stick.setAttribute('x', '0px');
+    stick.setAttribute('y', '0px');
+    stick.setAttribute('enable-background', 'new 0 0 200 200');
+    return stick;
+  }
+
+  /**
+   * Create a stroke.
+   * @param xmlns: Name space url.
+   * @param id: Id of stick.
+   * @returns {Element}
+   */
+  private static createStroke(xmlns: string, id: number): Element {
+    const stroke = document.createElementNS(xmlns, 'g');
+    stroke.setAttribute('stroke-width', '1');
+    stroke.setAttribute('stroke-linecap', 'round');
+    stroke.setAttribute('stroke-miterlimit', '10');
+
+    const path = MusicComponent.createPath(xmlns, id);
+    stroke.appendChild(path);
+    return stroke;
+  }
+
+  /**
+   * Create a path.
+   * @param xmlns: Name space url.
+   * @param id: Id of stick.
+   * @returns {Element}
+   */
+  private static createPath(xmlns: string, id: number): Element {
+    const defaultWidthHeightList = [620, 960];
+    const path = document.createElementNS(xmlns, 'path');
+    if (id % 2) {
+      path.setAttribute('d', 'M' + Math.round(Math.random() * defaultWidthHeightList[id % 2]) + ',0v620');
+      path.setAttribute('style', 'stroke-dasharray: \'620, 622\'');
+    } else {
+      path.setAttribute('d', 'M0,' + Math.round(Math.random() * defaultWidthHeightList[id % 2]) + 'h960');
+      path.setAttribute('style', 'stroke-dasharray: \'960, 962\'');
+    }
+    return path;
+  }
+
+  /**
+   * Create a Vivus stick.
+   * @param id: Id of stick.
+   */
+  private static createVivus(id: number) {
+    const options: VivusOptions = {
+      type: 'delayed',
+      duration: 1e3,
+      start: 'autostart',
+      pathTimingFunction: Vivus.LINEAR,
+      animTimingFunction: Vivus.LINEAR
+    };
+    // tslint:disable-next-line:no-unused-expression
+    new Vivus('timing' + id, options);
   }
 }
