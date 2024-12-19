@@ -1,0 +1,14 @@
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ES2022",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "paths": {
+      "@functions/*": ["./packages/functions/src/*"],
+      "@remix/*": ["./remix/*"]
+    }
+  }
+}

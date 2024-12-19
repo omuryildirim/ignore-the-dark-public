@@ -1,0 +1,81 @@
+name: oidc
+description: "Assume OIDC role. Outputs the AWS account ID for the assumed role, and optionally creates an AWS CLI profile."
+
+inputs:
+  role:
+    description: "The role (ARN) to assume, in the format of arn:aws:iam::<account id>:role/GithubDeployRole"
+    required: true
+
+  region:
+    description: "Target account region"
+    required: true
+    default: eu-west-1
+
+  audience:
+    description: "Target audience"
+    required: true
+    default: sts.amazonaws.com
+
+  profile:
+    description: "Profile name to create. If provided, no credentials will be set in the environment"
+    required: false
+
+  role-duration-seconds:
+    description: "Credential lifetime in seconds. Defaults to 1 hour"
+    required: false
+    default: 3600
+
+outputs:
+  account-id:
+    description: "The AWS account ID"
+    value: ${{ steps.get-account-id.outputs.account-id }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-region: ${{ inputs.region }}
+        role-to-assume: ${{ inputs.role }}
+        role-session-name: OIDCSession
+        role-duration-seconds: ${{ inputs.role-duration-seconds }}
+        audience: ${{ inputs.audience }}
+        mask-aws-account-id: false
+        unset-current-credentials: true
+      env:
+        AWS_ACCESS_KEY_ID: ""
+        AWS_SECRET_ACCESS_KEY: ""
+        AWS_SESSION_TOKEN: ""
+        AWS_DEFAULT_REGION: ""
+        AWS_REGION: ""
+        AWS_PROFILE: ""
+
+    - name: Display AWS Identity
+      run: aws sts get-caller-identity
+      shell: bash
+
+    - name: Set AWS account ID output
+      id: get-account-id
+      run: echo "account-id=$(aws sts get-caller-identity --query 'Account' --output text)" >> $GITHUB_OUTPUT
+      shell: bash
+
+    - name: Create AWS CLI profile
+      if: ${{ inputs.profile != ''}}
+      shell: bash
+      run: |
+        aws configure set region ${{ inputs.region }} --profile ${{ inputs.profile }}
+        aws configure set aws_access_key_id ${{ env.AWS_ACCESS_KEY_ID }} --profile ${{ inputs.profile }}
+        aws configure set aws_secret_access_key ${{ env.AWS_SECRET_ACCESS_KEY }} --profile ${{ inputs.profile }}
+        aws configure set aws_session_token ${{ env.AWS_SESSION_TOKEN }} --profile ${{ inputs.profile }}
+
+    - name: Reset credentials & set current profile
+      if: ${{ inputs.profile != ''}}
+      shell: bash
+      run: |
+        echo "AWS_ACCESS_KEY_ID=" >> $GITHUB_ENV
+        echo "AWS_SECRET_ACCESS_KEY=" >> $GITHUB_ENV
+        echo "AWS_SESSION_TOKEN=" >> $GITHUB_ENV
+        echo "AWS_REGION=" >> $GITHUB_ENV
+        echo "AWS_DEFAULT_REGION=" >> $GITHUB_ENV
+        echo "AWS_PROFILE=${{ inputs.profile }}" >> $GITHUB_ENV

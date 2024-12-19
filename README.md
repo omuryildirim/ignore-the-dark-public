@@ -3,8 +3,8 @@
 **Live Demo**: [http://ignorethedark.com/](http://ignorethedark.com/)
  
 
-The main purpose of this repository is to show a good end-to-end project setup and workflow for writing a complete web application with following stack; Node.js, mongodb, Angular.
-The code published here samples the web-site ignorethedark.com. Therefore, some parts on live demo can be excluded from the given source code.
+This repository is created as a boilerplate for writing a complete web application with following stack; Remix, AWS and Cloudflare.
+The code published here samples the web-site [ignorethedark.com](https://ignorethedark.com). Therefore, some parts of live demo may be excluded from the published source code.
 
 # Table of contents:
 
@@ -15,8 +15,7 @@ The code published here samples the web-site ignorethedark.com. Therefore, some 
 
 # Pre-reqs
 To build and run this app locally you will need a few things:
-- Install [Node.js](https://nodejs.org/en/)
-- Install [MongoDB](https://docs.mongodb.com/manual/installation/)
+- Install [Node.js](https://nodejs.org/en/) (> v20)
 
 # Getting started
 - Clone the repository
@@ -25,52 +24,36 @@ git clone --depth=1 https://github.com/omuryildirim/ignore-the-dark-public.git <
 ```
 - Install dependencies
 ```
-cd <project_name>/angular
-npm install
-npm run build
-cd ../nodejs
-npm install
+pnpm install
+cd <project_name>/aws
+pnpm install
+pnpm dev
 ```
-- Configure your mongoDB server
-```bash
-# create the db directory
-sudo mkdir -p /data/db
-# give the db correct read/write permissions
-sudo chmod 777 /data/db
 
-# starting from macOS 10.15 even the admin cannot create directory at root
-# so lets create the db diretory under the home directory.
-mkdir -p ~/data/db
-# user account has automatically read and write permissions for ~/data/db.
-```
-- Start your mongoDB server (you'll probably want another command prompt)
-```bash
-mongod
+- Alternatively, you can just run the frontend application:
 
-# on macOS 10.15 or above the db directory is under home directory
-mongod --dbpath ~/data/db
-```
-- Build and run the project
-```
-npm run build
-npm start
+```bash
+cd <project_name>/aws/remix
+pnpm install
+pnpm dev:remix
 ```
 
 # Deploying the app
-There are many ways to deploy an Node app. Either you build it locally and upload the build folder to your server and serve it via Nginx or you can use docker and run your application inside a docker container.
+The project comes with GitHub actions to deploy both SST application to AWS and Cloudflare workers to Cloudflare.
+In order to actions to work, you need to add secrets to your repository.
 
+Alternatively, you can deploy the app manually.
 
-## Docker deployment
-- [**Docker install**](https://docs.docker.com/install/) - First follow instructions related to your environment and install docker.
-- [**Docker compose install**](https://docs.docker.com/compose/install/) - Follow instructions related to your environment and install docker compose.
+```bash
+cd <project_name>/aws
+pnpm deploy	# Deploy the SST application to AWS
 
-Deploy your code base to your server. Then build your application with docker compose.
-```
-cd <project_name>
-sudo docker-compose build
-```
+cd <project_name>/cloudflare/api-worker
+pnpm deploy	# Deploy the api worker to Cloudflare
 
-After building docker container, run it via docker compose in desired port.
-```
-sudo docker-compose run -p 3000:3000 -d app
+cd <project_name>/cloudflare/photography-worker
+pnpm deploy	# Deploy the photography worker to Cloudflare
+
+cd <project_name>/cloudflare/route-worker
+pnpm deploy	# Deploy the route worker to Cloudflare
 ```

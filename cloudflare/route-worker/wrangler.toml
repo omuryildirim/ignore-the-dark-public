@@ -1,0 +1,10 @@
+name = "root-worker"
+main = "src/index.ts"
+compatibility_date = "2023-04-11"
+routes = [
+	{ pattern = "example.com/*", zone_name = "example.com" },
+	{ pattern = "www.example.com/*", zone_name = "example.com" }
+]
+
+node_compat = true
+workers_dev = true
