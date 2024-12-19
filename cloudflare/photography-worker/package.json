@@ -1,0 +1,19 @@
+{
+  "name": "photography-worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
+  "keywords": ["cloudflare", "boilerplate"],
+  "author": "omuryildirim",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20241205.0",
+    "typescript": "5.7.2",
+    "wrangler": "3.95.0"
+  }
+}

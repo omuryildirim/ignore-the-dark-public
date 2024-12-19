@@ -1,0 +1,54 @@
+name: Deploy Workers
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - cloudflare/** # Only triggers on changes in the worker folder
+
+jobs:
+  deploy-route-worker:
+    runs-on: ubuntu-latest
+    name: Deploy Route Worker
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.10.4
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: "cloudflare/route-worker"
+  deploy-api-worker:
+    needs: deploy-route-worker
+    runs-on: ubuntu-latest
+    name: Deploy API Worker
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.10.4
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: "cloudflare/api-worker"
+  deploy-photography-worker:
+    needs: deploy-route-worker
+    runs-on: ubuntu-latest
+    name: Deploy Photography Worker
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.10.4
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: "cloudflare/photography-worker"

@@ -1,0 +1,16 @@
+{
+  "name": "ignore-the-dark",
+  "version": "1.0.0",
+  "description": "Ignore the dark website",
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --write --unsafe .",
+    "precommit": "pnpm run lint:fix"
+  },
+  "keywords": ["aws", "sst", "cloudflare", "remix", "biome", "boilerplate"],
+  "author": "omuryildirim",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
+}

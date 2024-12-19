@@ -1,0 +1,7 @@
+name = "photography-worker"
+main = "src/index.ts"
+compatibility_date = "2023-04-11"
+route = "photography.example.com/*"
+
+node_compat = true
+workers_dev = true

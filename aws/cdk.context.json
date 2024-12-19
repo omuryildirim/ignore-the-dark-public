@@ -1,0 +1,6 @@
+{
+  "hosted-zone:account=example:domainName=example.com:region=eu-west-1": {
+    "Id": "/hostedzone/example",
+    "Name": "example.com."
+  }
+}

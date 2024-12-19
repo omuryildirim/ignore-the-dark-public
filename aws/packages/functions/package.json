@@ -1,0 +1,23 @@
+{
+  "name": "ignore-the-dark-backend",
+  "version": "0.0.0",
+  "keywords": ["aws", "sst", "boilerplate"],
+  "author": "omuryildirim",
+  "license": "MIT",
+  "scripts": {
+    "test": "sst bind vitest",
+    "typecheck": "tsc -noEmit"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.126",
+    "@types/node": "18.18.9",
+    "@types/uuid": "10.0.0",
+    "typescript": "5.7.2",
+    "vitest": "0.34.6"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "3.714.0",
+    "@aws-sdk/lib-dynamodb": "3.714.0",
+    "uuid": "11.0.3"
+  }
+}

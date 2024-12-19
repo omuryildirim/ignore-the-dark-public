@@ -1,0 +1,7 @@
+name = "api-worker"
+main = "src/index.ts"
+compatibility_date = "2023-04-11"
+route = "api.example.com/*"
+
+node_compat = true
+workers_dev = true

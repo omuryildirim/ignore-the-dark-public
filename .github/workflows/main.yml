@@ -1,0 +1,33 @@
+name: main
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - aws/** # Only triggers on changes in the aws folder
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+  packages: read
+
+jobs:
+  lint-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/lint
+#
+#  deploy:
+#    needs: lint-build
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: ./.github/actions/oidc
+#        with:
+#          role: ${{ vars.DEPLOY_ROLE }}
+#      - uses: ./.github/actions/deploy
+#        with:
+#          stage: prod

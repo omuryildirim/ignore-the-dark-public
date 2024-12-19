@@ -21,6 +21,9 @@ coverage
 
 # API keys and secrets
 .env
+docs/aws.json
+docs/movies.json
+docs/photos.json
 
 # Dependency directory
 node_modules
@@ -35,9 +38,12 @@ bower_components
 Thumbs.db
 
 # Ignore built ts files
+.turbo
 dist/**/*
 photography/**/*
 sftp
 
 # ignore yarn.lock
 yarn.lock
+
+aws/.sst
