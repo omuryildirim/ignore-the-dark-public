@@ -11,7 +11,6 @@ The code published here samples the web-site [ignorethedark.com](https://ignoret
 - [Pre-reqs](#pre-reqs)
 - [Getting started](#getting-started)
 - [Deploying the app](#deploying-the-app)
-	- [Docker deployment](#docker-deployment)
 
 # Pre-reqs
 To build and run this app locally you will need a few things:
