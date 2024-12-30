@@ -9,15 +9,15 @@
     "typecheck": "tsc -noEmit"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.126",
+    "@types/aws-lambda": "8.10.146",
     "@types/node": "18.18.9",
     "@types/uuid": "10.0.0",
     "typescript": "5.7.2",
     "vitest": "0.34.6"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "3.714.0",
-    "@aws-sdk/lib-dynamodb": "3.714.0",
+    "@aws-sdk/client-dynamodb": "3.716.0",
+    "@aws-sdk/lib-dynamodb": "3.716.0",
     "uuid": "11.0.3"
   }
 }
