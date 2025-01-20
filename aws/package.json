@@ -22,7 +22,7 @@
     "constructs": "10.4.2",
     "exifreader": "^4.26.0",
     "image-thumbnail": "^1.0.15",
-    "sst": "2.45.1",
+    "sst": "3.5.15",
     "turbo": "2.3.3",
     "typescript": "5.7.3"
   }
