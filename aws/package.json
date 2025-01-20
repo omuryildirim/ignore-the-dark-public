@@ -18,7 +18,7 @@
   "license": "MIT",
   "devDependencies": {
     "@tsconfig/node20": "20.1.4",
-    "aws-cdk-lib": "2.175.1",
+    "aws-cdk-lib": "2.176.0",
     "constructs": "10.4.2",
     "exifreader": "^4.26.0",
     "image-thumbnail": "^1.0.15",
