@@ -18,14 +18,14 @@ importers:
         specifier: 10.4.2
         version: 10.4.2
       exifreader:
-        specifier: ^4.26.0
-        version: 4.26.0
+        specifier: ^4.26.1
+        version: 4.26.1
       image-thumbnail:
         specifier: ^1.0.15
         version: 1.0.17
       sst:
         specifier: 2.45.1
-        version: 2.45.1(@aws-sdk/client-sso-oidc@3.721.0(@aws-sdk/client-sts@3.721.0(aws-crt@1.24.0))(aws-crt@1.24.0))(@jest/transform@29.7.0)(@jest/types@29.6.3)(@types/react@18.2.37)(aws-crt@1.24.0)(babel-jest@29.7.0(@babel/core@7.26.0))(babel-plugin-macros@3.1.0)(typescript@5.7.3)(vitest@3.0.2(@types/node@18.18.9))
+        version: 2.45.1(@aws-sdk/client-sso-oidc@3.721.0(@aws-sdk/client-sts@3.721.0(aws-crt@1.24.0))(aws-crt@1.24.0))(@jest/transform@29.7.0)(@jest/types@29.6.3)(@types/react@18.2.37)(aws-crt@1.24.0)(babel-jest@29.7.0(@babel/core@7.26.0))(babel-plugin-macros@3.1.0)(typescript@5.7.3)(vitest@3.0.2(@types/node@18.19.68))
       turbo:
         specifier: 2.3.3
         version: 2.3.3
@@ -3383,8 +3383,8 @@ packages:
   '@whatwg-node/server@0.7.7':
     resolution: {integrity: sha512-aHURgNDFm/48WVV3vhTMfnEKCYwYgdaRdRhZsQZx4UVFjGGkGay7Ys0+AYu9QT/jpoImv2oONkstoTMUprDofg==}
 
-  '@xmldom/xmldom@0.9.6':
-    resolution: {integrity: sha512-Su4xcxR0CPGwlDHNmVP09fqET9YxbyDXHaSob6JlBH7L6reTYaeim6zbk9o08UarO0L5GTRo3uzl0D+9lSxmvw==}
+  '@xmldom/xmldom@0.9.7':
+    resolution: {integrity: sha512-syvR8iIJjpTZ/stv7l89UAViwGFh6lbheeOaqSxkYx9YNmIVvPTRH+CT/fpykFtUx5N+8eSMDRvggF9J8GEPzQ==}
     engines: {node: '>=14.6'}
 
   '@zxing/text-encoding@0.9.0':
@@ -4472,8 +4472,8 @@ packages:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
 
-  exifreader@4.26.0:
-    resolution: {integrity: sha512-nNN9B0oaXTOpArdnIdJBAro2Sa620m7wMjMA5Xy1rcua0EYHVjzGKM5syBOWDqIG2Qay6Pes/5FOdj65hvZ9Vw==}
+  exifreader@4.26.1:
+    resolution: {integrity: sha512-5u7LooUryPAhdQ/Wn5n/P8WsWJ/DxZ5AToc7gTDlzN41QlecGFEt3y+rXpaOe7GhxZ8cD5t8E7yqrq0oZeVHmw==}
 
   exit-hook@2.2.1:
     resolution: {integrity: sha512-eNTPlAD67BmP31LDINZ3U7HSF8l57TxOY2PmBJ1shpCvpnxBF93mWCE8YHBnXs8qiUZJc9WDcWIeC3a2HIAMfw==}
@@ -5441,6 +5441,7 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
@@ -13731,13 +13732,22 @@ snapshots:
       chai: 5.1.2
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@3.0.2(vite@6.0.9(@types/node@18.18.9))':
+  '@vitest/mocker@3.0.2(vite@6.0.9(@types/node@18.18.9)(sass@1.83.4)(yaml@2.7.0))':
     dependencies:
       '@vitest/spy': 3.0.2
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
       vite: 6.0.9(@types/node@18.18.9)(sass@1.83.4)(yaml@2.7.0)
+
+  '@vitest/mocker@3.0.2(vite@6.0.9(@types/node@18.19.68))':
+    dependencies:
+      '@vitest/spy': 3.0.2
+      estree-walker: 3.0.3
+      magic-string: 0.30.17
+    optionalDependencies:
+      vite: 6.0.9(@types/node@18.19.68)
+    optional: true
 
   '@vitest/pretty-format@3.0.2':
     dependencies:
@@ -13791,7 +13801,7 @@ snapshots:
       '@whatwg-node/fetch': 0.8.8
       tslib: 2.8.1
 
-  '@xmldom/xmldom@0.9.6':
+  '@xmldom/xmldom@0.9.7':
     optional: true
 
   '@zxing/text-encoding@0.9.0':
@@ -13998,14 +14008,14 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  aws-sdk-client-mock-jest@4.1.0(aws-sdk-client-mock@4.1.0)(vitest@3.0.2(@types/node@18.18.9)):
+  aws-sdk-client-mock-jest@4.1.0(aws-sdk-client-mock@4.1.0)(vitest@3.0.2(@types/node@18.19.68)):
     dependencies:
       '@vitest/expect': 3.0.2
       aws-sdk-client-mock: 4.1.0
       expect: 29.7.0
       tslib: 2.8.1
     optionalDependencies:
-      vitest: 3.0.2(@types/node@18.18.9)(sass@1.83.4)(yaml@2.7.0)
+      vitest: 3.0.2(@types/node@18.19.68)
 
   aws-sdk-client-mock@4.1.0:
     dependencies:
@@ -15056,9 +15066,9 @@ snapshots:
       signal-exit: 3.0.7
       strip-final-newline: 2.0.0
 
-  exifreader@4.26.0:
+  exifreader@4.26.1:
     optionalDependencies:
-      '@xmldom/xmldom': 0.9.6
+      '@xmldom/xmldom': 0.9.7
 
   exit-hook@2.2.1: {}
 
@@ -16194,7 +16204,7 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@29.7.0(@types/node@18.18.9)(babel-plugin-macros@3.1.0):
+  jest@29.7.0(@types/node@18.19.68)(babel-plugin-macros@3.1.0):
     dependencies:
       '@jest/core': 29.7.0(babel-plugin-macros@3.1.0)
       '@jest/types': 29.6.3
@@ -17983,7 +17993,7 @@ snapshots:
     dependencies:
       minipass: 7.1.2
 
-  sst-aws-cdk@2.171.1-4(@aws-sdk/client-sso-oidc@3.721.0(@aws-sdk/client-sts@3.721.0(aws-crt@1.24.0))(aws-crt@1.24.0))(@babel/core@7.26.0)(@jest/transform@29.7.0)(@jest/types@29.6.3)(aws-crt@1.24.0)(babel-jest@29.7.0(@babel/core@7.26.0))(babel-plugin-macros@3.1.0)(esbuild@0.18.13)(typescript@5.7.3)(vitest@3.0.2(@types/node@18.18.9)):
+  sst-aws-cdk@2.171.1-4(@aws-sdk/client-sso-oidc@3.721.0(@aws-sdk/client-sts@3.721.0(aws-crt@1.24.0))(aws-crt@1.24.0))(@babel/core@7.26.0)(@jest/transform@29.7.0)(@jest/types@29.6.3)(aws-crt@1.24.0)(babel-jest@29.7.0(@babel/core@7.26.0))(babel-plugin-macros@3.1.0)(esbuild@0.18.13)(typescript@5.7.3)(vitest@3.0.2(@types/node@18.19.68)):
     dependencies:
       '@aws-cdk/cloud-assembly-schema': 38.0.1
       '@aws-cdk/cloudformation-diff': 2.171.1
@@ -18034,7 +18044,7 @@ snapshots:
       archiver: 5.3.2
       aws-cdk-lib: 2.171.1(constructs@10.4.2)
       aws-sdk-client-mock: 4.1.0
-      aws-sdk-client-mock-jest: 4.1.0(aws-sdk-client-mock@4.1.0)(vitest@3.0.2(@types/node@18.18.9))
+      aws-sdk-client-mock-jest: 4.1.0(aws-sdk-client-mock@4.1.0)(vitest@3.0.2(@types/node@18.19.68))
       axios: 1.7.9
       camelcase: 6.3.0
       cdk-from-cfn: 0.162.1
@@ -18045,7 +18055,7 @@ snapshots:
       fast-check: 3.23.2
       fs-extra: 9.1.0
       glob: 7.2.3
-      jest: 29.7.0(@types/node@18.18.9)(babel-plugin-macros@3.1.0)
+      jest: 29.7.0(@types/node@18.19.68)(babel-plugin-macros@3.1.0)
       jest-mock: 29.7.0
       json-diff: 0.10.0
       madge: 5.0.2
@@ -18085,7 +18095,7 @@ snapshots:
       - typescript
       - vitest
 
-  sst@2.45.1(@aws-sdk/client-sso-oidc@3.721.0(@aws-sdk/client-sts@3.721.0(aws-crt@1.24.0))(aws-crt@1.24.0))(@jest/transform@29.7.0)(@jest/types@29.6.3)(@types/react@18.2.37)(aws-crt@1.24.0)(babel-jest@29.7.0(@babel/core@7.26.0))(babel-plugin-macros@3.1.0)(typescript@5.7.3)(vitest@3.0.2(@types/node@18.18.9)):
+  sst@2.45.1(@aws-sdk/client-sso-oidc@3.721.0(@aws-sdk/client-sts@3.721.0(aws-crt@1.24.0))(aws-crt@1.24.0))(@jest/transform@29.7.0)(@jest/types@29.6.3)(@types/react@18.2.37)(aws-crt@1.24.0)(babel-jest@29.7.0(@babel/core@7.26.0))(babel-plugin-macros@3.1.0)(typescript@5.7.3)(vitest@3.0.2(@types/node@18.19.68)):
     dependencies:
       '@aws-cdk/aws-lambda-python-alpha': 2.171.1-alpha.0(aws-cdk-lib@2.171.1(constructs@10.3.0))(constructs@10.3.0)
       '@aws-cdk/cloud-assembly-schema': 38.0.1
@@ -18147,7 +18157,7 @@ snapshots:
       ora: 6.3.1
       react: 18.2.0
       remeda: 1.29.0
-      sst-aws-cdk: 2.171.1-4(@aws-sdk/client-sso-oidc@3.721.0(@aws-sdk/client-sts@3.721.0(aws-crt@1.24.0))(aws-crt@1.24.0))(@babel/core@7.26.0)(@jest/transform@29.7.0)(@jest/types@29.6.3)(aws-crt@1.24.0)(babel-jest@29.7.0(@babel/core@7.26.0))(babel-plugin-macros@3.1.0)(esbuild@0.18.13)(typescript@5.7.3)(vitest@3.0.2(@types/node@18.18.9))
+      sst-aws-cdk: 2.171.1-4(@aws-sdk/client-sso-oidc@3.721.0(@aws-sdk/client-sts@3.721.0(aws-crt@1.24.0))(aws-crt@1.24.0))(@babel/core@7.26.0)(@jest/transform@29.7.0)(@jest/types@29.6.3)(aws-crt@1.24.0)(babel-jest@29.7.0(@babel/core@7.26.0))(babel-plugin-macros@3.1.0)(esbuild@0.18.13)(typescript@5.7.3)(vitest@3.0.2(@types/node@18.19.68))
       tree-kill: 1.2.2
       undici: 5.27.2
       uuid: 9.0.1
@@ -18369,7 +18379,7 @@ snapshots:
       bs-logger: 0.2.6
       ejs: 3.1.10
       fast-json-stable-stringify: 2.1.0
-      jest: 29.7.0(@types/node@18.18.9)(babel-plugin-macros@3.1.0)
+      jest: 29.7.0(@types/node@18.19.68)(babel-plugin-macros@3.1.0)
       jest-util: 29.7.0
       json5: 2.2.3
       lodash.memoize: 4.1.2
@@ -18671,6 +18681,28 @@ snapshots:
       - tsx
       - yaml
 
+  vite-node@3.0.2(@types/node@18.19.68):
+    dependencies:
+      cac: 6.7.14
+      debug: 4.4.0
+      es-module-lexer: 1.6.0
+      pathe: 2.0.2
+      vite: 6.0.9(@types/node@18.19.68)
+    transitivePeerDependencies:
+      - '@types/node'
+      - jiti
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+    optional: true
+
   vite@5.4.12(@types/node@22.10.5)(sass@1.83.4):
     dependencies:
       esbuild: 0.21.5
@@ -18692,10 +18724,20 @@ snapshots:
       sass: 1.83.4
       yaml: 2.7.0
 
+  vite@6.0.9(@types/node@18.19.68):
+    dependencies:
+      esbuild: 0.24.2
+      postcss: 8.5.1
+      rollup: 4.31.0
+    optionalDependencies:
+      '@types/node': 18.19.68
+      fsevents: 2.3.3
+    optional: true
+
   vitest@3.0.2(@types/node@18.18.9)(sass@1.83.4)(yaml@2.7.0):
     dependencies:
       '@vitest/expect': 3.0.2
-      '@vitest/mocker': 3.0.2(vite@6.0.9(@types/node@18.18.9))
+      '@vitest/mocker': 3.0.2(vite@6.0.9(@types/node@18.18.9)(sass@1.83.4)(yaml@2.7.0))
       '@vitest/pretty-format': 3.0.2
       '@vitest/runner': 3.0.2
       '@vitest/snapshot': 3.0.2
@@ -18729,6 +18771,45 @@ snapshots:
       - terser
       - tsx
       - yaml
+
+  vitest@3.0.2(@types/node@18.19.68):
+    dependencies:
+      '@vitest/expect': 3.0.2
+      '@vitest/mocker': 3.0.2(vite@6.0.9(@types/node@18.19.68))
+      '@vitest/pretty-format': 3.0.2
+      '@vitest/runner': 3.0.2
+      '@vitest/snapshot': 3.0.2
+      '@vitest/spy': 3.0.2
+      '@vitest/utils': 3.0.2
+      chai: 5.1.2
+      debug: 4.4.0
+      expect-type: 1.1.0
+      magic-string: 0.30.17
+      pathe: 2.0.2
+      std-env: 3.8.0
+      tinybench: 2.9.0
+      tinyexec: 0.3.2
+      tinypool: 1.0.2
+      tinyrainbow: 2.0.0
+      vite: 6.0.9(@types/node@18.19.68)
+      vite-node: 3.0.2(@types/node@18.19.68)
+      why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@types/node': 18.19.68
+    transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
+      - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+    optional: true
 
   vivus@0.4.6: {}
 
