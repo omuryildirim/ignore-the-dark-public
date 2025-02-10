@@ -124,8 +124,8 @@ importers:
         specifier: 7.1.5
         version: 7.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       remix-i18next:
-        specifier: 6.4.1
-        version: 6.4.1(@remix-run/node@2.15.3(typescript@5.7.3))(@remix-run/react@2.15.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3))(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+        specifier: 7.0.2
+        version: 7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-router@7.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       sass:
         specifier: 1.84.0
         version: 1.84.0
@@ -6461,24 +6461,14 @@ packages:
   remeda@1.29.0:
     resolution: {integrity: sha512-M3LQ14KtMdQ1879lj/kKji3zBk158s7Rwg963mEkTfQFMxnKrIEAMxJfo/+0sp/+uGgN/KMVU2MBA4LNjqf8YQ==}
 
-  remix-i18next@6.4.1:
-    resolution: {integrity: sha512-Ma4ESNj8uZmm/Fjq2ZHEbsGvYYO2rV1BtqwIFPAYUeitBaED+r0pNXktUzvsHEanvbFOZPAhEcp5f17vDslmeA==}
+  remix-i18next@7.0.2:
+    resolution: {integrity: sha512-mfqbEdB76KgJo3f1+2FJBtoI5VMrq6zLKt+aYpCBeycsj7njafkDYRQ6SVzUYAES8EyT6gNd45agmhr8H10VmQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@remix-run/cloudflare': ^2.0.0
-      '@remix-run/deno': ^2.0.0
-      '@remix-run/node': ^2.0.0
-      '@remix-run/react': ^2.0.0
-      i18next: ^23.1.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      i18next: ^24.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-i18next: ^13.0.0 || ^14.0.0 || ^15.0.0
-    peerDependenciesMeta:
-      '@remix-run/cloudflare':
-        optional: true
-      '@remix-run/deno':
-        optional: true
-      '@remix-run/node':
-        optional: true
+      react-router: ^7.0.0
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -17804,14 +17794,12 @@ snapshots:
 
   remeda@1.29.0: {}
 
-  remix-i18next@6.4.1(@remix-run/node@2.15.3(typescript@5.7.3))(@remix-run/react@2.15.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3))(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0):
+  remix-i18next@7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-router@7.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0):
     dependencies:
-      '@remix-run/react': 2.15.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3)
       i18next: 24.2.2(typescript@5.7.3)
       react: 18.2.0
       react-i18next: 15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-    optionalDependencies:
-      '@remix-run/node': 2.15.3(typescript@5.7.3)
+      react-router: 7.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   require-directory@2.1.1: {}
 
