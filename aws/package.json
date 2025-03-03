@@ -18,12 +18,12 @@
   "license": "MIT",
   "devDependencies": {
     "@tsconfig/node20": "20.1.4",
-    "aws-cdk-lib": "2.178.2",
+    "aws-cdk-lib": "2.181.1",
     "constructs": "10.4.2",
     "exifreader": "^4.26.1",
     "image-thumbnail": "^1.0.15",
     "sst": "2.45.1",
-    "turbo": "2.4.2",
-    "typescript": "5.7.3"
+    "turbo": "2.4.4",
+    "typescript": "5.8.2"
   }
 }
