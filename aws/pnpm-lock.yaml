@@ -18,8 +18,8 @@ importers:
         specifier: 10.4.2
         version: 10.4.2
       exifreader:
-        specifier: ^4.26.1
-        version: 4.26.1
+        specifier: ^4.26.2
+        version: 4.26.2
       image-thumbnail:
         specifier: ^1.0.15
         version: 1.0.17
@@ -3395,8 +3395,8 @@ packages:
   '@whatwg-node/server@0.7.7':
     resolution: {integrity: sha512-aHURgNDFm/48WVV3vhTMfnEKCYwYgdaRdRhZsQZx4UVFjGGkGay7Ys0+AYu9QT/jpoImv2oONkstoTMUprDofg==}
 
-  '@xmldom/xmldom@0.9.7':
-    resolution: {integrity: sha512-syvR8iIJjpTZ/stv7l89UAViwGFh6lbheeOaqSxkYx9YNmIVvPTRH+CT/fpykFtUx5N+8eSMDRvggF9J8GEPzQ==}
+  '@xmldom/xmldom@0.9.8':
+    resolution: {integrity: sha512-p96FSY54r+WJ50FIOsCOjyj/wavs8921hG5+kVMmZgKcvIKxMXHTrjNJvRgWa/zuX3B6t2lijLNFaOyuxUH+2A==}
     engines: {node: '>=14.6'}
 
   '@zxing/text-encoding@0.9.0':
@@ -4499,8 +4499,8 @@ packages:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
 
-  exifreader@4.26.1:
-    resolution: {integrity: sha512-5u7LooUryPAhdQ/Wn5n/P8WsWJ/DxZ5AToc7gTDlzN41QlecGFEt3y+rXpaOe7GhxZ8cD5t8E7yqrq0oZeVHmw==}
+  exifreader@4.26.2:
+    resolution: {integrity: sha512-+UqmTm2C7fS4u4YnKx7Fod0+UDeUOmmgkslCx4N2p68YNZSPw2AYyklIpNbuhxYmQjpYOS87bt6sPDOvQ+Qvsg==}
 
   exit-hook@2.2.1:
     resolution: {integrity: sha512-eNTPlAD67BmP31LDINZ3U7HSF8l57TxOY2PmBJ1shpCvpnxBF93mWCE8YHBnXs8qiUZJc9WDcWIeC3a2HIAMfw==}
@@ -13962,7 +13962,7 @@ snapshots:
       '@whatwg-node/fetch': 0.8.8
       tslib: 2.8.1
 
-  '@xmldom/xmldom@0.9.7':
+  '@xmldom/xmldom@0.9.8':
     optional: true
 
   '@zxing/text-encoding@0.9.0':
@@ -15283,9 +15283,9 @@ snapshots:
       signal-exit: 3.0.7
       strip-final-newline: 2.0.0
 
-  exifreader@4.26.1:
+  exifreader@4.26.2:
     optionalDependencies:
-      '@xmldom/xmldom': 0.9.7
+      '@xmldom/xmldom': 0.9.8
 
   exit-hook@2.2.1: {}
 
