@@ -33,7 +33,7 @@
     "i18next-http-backend": "3.0.2",
     "isbot": "5.1.25",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react-dom": "19.1.0",
     "react-i18next": "15.4.1",
     "react-router": "7.5.0",
     "remix-i18next": "6.4.1",
@@ -44,7 +44,7 @@
   "devDependencies": {
     "@remix-run/dev": "2.16.4",
     "@types/react": "18.2.37",
-    "@types/react-dom": "18.2.15",
+    "@types/react-dom": "19.1.1",
     "typescript": "5.8.3"
   },
   "engines": {
