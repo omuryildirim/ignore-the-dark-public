@@ -12,8 +12,8 @@ importers:
         specifier: 20.1.5
         version: 20.1.5
       aws-cdk-lib:
-        specifier: 2.189.1
-        version: 2.189.1(constructs@10.4.2)
+        specifier: 2.190.0
+        version: 2.190.0(constructs@10.4.2)
       constructs:
         specifier: 10.4.2
         version: 10.4.2
@@ -39,8 +39,8 @@ importers:
         specifier: 3.788.0
         version: 3.788.0(aws-crt@1.24.0)
       '@aws-sdk/lib-dynamodb':
-        specifier: 3.788.0
-        version: 3.788.0(@aws-sdk/client-dynamodb@3.788.0(aws-crt@1.24.0))
+        specifier: 3.789.0
+        version: 3.789.0(@aws-sdk/client-dynamodb@3.788.0(aws-crt@1.24.0))
       uuid:
         specifier: 11.1.0
         version: 11.1.0
@@ -100,8 +100,8 @@ importers:
         specifier: 24.2.3
         version: 24.2.3(typescript@5.8.3)
       i18next-browser-languagedetector:
-        specifier: 8.0.4
-        version: 8.0.4
+        specifier: 8.0.5
+        version: 8.0.5
       i18next-fs-backend:
         specifier: 2.6.0
         version: 2.6.0
@@ -121,8 +121,8 @@ importers:
         specifier: 15.4.1
         version: 15.4.1(i18next@24.2.3(typescript@5.8.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-router:
-        specifier: 7.5.0
-        version: 7.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 7.5.1
+        version: 7.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       remix-i18next:
         specifier: 6.4.1
         version: 6.4.1(@remix-run/node@2.16.5(typescript@5.8.3))(@remix-run/react@2.16.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.8.3))(i18next@24.2.3(typescript@5.8.3))(react-i18next@15.4.1(i18next@24.2.3(typescript@5.8.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
@@ -591,8 +591,8 @@ packages:
     resolution: {integrity: sha512-2+a4WXRc+07uiPR+zJiPGKSOWaNJQNqitkks+6Hhm/haTLJqNVTgY2OWDh2PXvwMNpKB+AlGdhE65Oy6NzUgXg==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/lib-dynamodb@3.788.0':
-    resolution: {integrity: sha512-GYs8E4agxy/uElb8eoZ9RVcF+w43wkVxAowq6VQ+Jpw2oH7pxwrkqG1mIJpoJGYLvic+tJO0pL4xLUI4ULeVTg==}
+  '@aws-sdk/lib-dynamodb@3.789.0':
+    resolution: {integrity: sha512-ut3d1vaHLxZCh2rc6MwghTz4DxPPoCDP0GjRUsiysG3IHx97akUt2XwPrjNkot0/Hg4JJUZzl95QCjaIf/pUxg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.788.0
@@ -3693,8 +3693,8 @@ packages:
       - yaml
       - mime-types
 
-  aws-cdk-lib@2.189.1:
-    resolution: {integrity: sha512-9JU0yUr2iRTJ1oCPrHyx7hOtBDWyUfyOcdb6arlumJnMcQr2cyAMASY8HuAXHc8Y10ipVp8dRTW+J4/132IIYA==}
+  aws-cdk-lib@2.190.0:
+    resolution: {integrity: sha512-D6BGf0Gg4s3XCnNiXnCgH1NHXYjngizs676HeytI4ekrUMtsw1ZmH9dlFBattH1x9gYX/9A+UxMkid+P4bNZKA==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       constructs: ^10.0.0
@@ -4969,8 +4969,8 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
-  i18next-browser-languagedetector@8.0.4:
-    resolution: {integrity: sha512-f3frU3pIxD50/Tz20zx9TD9HobKYg47fmAETb117GKGPrhwcSSPJDoCposXlVycVebQ9GQohC3Efbpq7/nnJ5w==}
+  i18next-browser-languagedetector@8.0.5:
+    resolution: {integrity: sha512-OstebRKqKiQw8xEvQF5aRyUujsCatanj7Q9eo5iiH2gJpoXGZ7483ol3sVBwfqbobTQPNH1J+NAyJ1aCQoEC+w==}
 
   i18next-fs-backend@2.6.0:
     resolution: {integrity: sha512-3ZlhNoF9yxnM8pa8bWp5120/Ob6t4lVl1l/tbLmkml/ei3ud8IWySCHt2lrY5xWRlSU5D9IV2sm5bEbGuTqwTw==}
@@ -6528,8 +6528,8 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
-  react-router@7.5.0:
-    resolution: {integrity: sha512-estOHrRlDMKdlQa6Mj32gIks4J+AxNsYoE0DbTTxiMy2mPzZuWSDU+N85/r1IlNR7kGfznF3VCUlvc5IUO+B9g==}
+  react-router@7.5.1:
+    resolution: {integrity: sha512-/jjU3fcYNd2bwz9Q0xt5TwyiyoO8XjSEFXJY4O/lMAlkGTHWuHRAbR9Etik+lSDqMC7A7mz3UlXzgYT6Vl58sA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -10417,7 +10417,7 @@ snapshots:
       mnemonist: 0.38.3
       tslib: 2.8.1
 
-  '@aws-sdk/lib-dynamodb@3.788.0(@aws-sdk/client-dynamodb@3.788.0(aws-crt@1.24.0))':
+  '@aws-sdk/lib-dynamodb@3.789.0(@aws-sdk/client-dynamodb@3.788.0(aws-crt@1.24.0))':
     dependencies:
       '@aws-sdk/client-dynamodb': 3.788.0(aws-crt@1.24.0)
       '@aws-sdk/core': 3.775.0
@@ -12225,7 +12225,7 @@ snapshots:
 
   '@mui/private-theming@6.4.8(@types/react@18.2.37)(react@18.2.0)':
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       '@mui/utils': 6.4.8(@types/react@18.2.37)(react@18.2.0)
       prop-types: 15.8.1
       react: 18.2.0
@@ -12234,7 +12234,7 @@ snapshots:
 
   '@mui/styled-engine@6.4.8(@emotion/react@11.14.0(@types/react@18.2.37)(react@18.2.0))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.2.37)(react@18.2.0))(@types/react@18.2.37)(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       '@emotion/cache': 11.14.0
       '@emotion/serialize': 1.3.3
       '@emotion/sheet': 1.4.0
@@ -14374,7 +14374,7 @@ snapshots:
       '@aws-cdk/cloud-assembly-schema': 38.0.1
       constructs: 10.4.2
 
-  aws-cdk-lib@2.189.1(constructs@10.4.2):
+  aws-cdk-lib@2.190.0(constructs@10.4.2):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.232
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.0
@@ -14489,7 +14489,7 @@ snapshots:
 
   babel-plugin-macros@3.1.0:
     dependencies:
-      '@babel/runtime': 7.26.0
+      '@babel/runtime': 7.27.0
       cosmiconfig: 7.1.0
       resolve: 1.22.9
 
@@ -15193,7 +15193,7 @@ snapshots:
 
   dom-helpers@5.2.1:
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       csstype: 3.1.3
 
   dot-prop@6.0.1:
@@ -16027,9 +16027,9 @@ snapshots:
 
   human-signals@2.1.0: {}
 
-  i18next-browser-languagedetector@8.0.4:
+  i18next-browser-languagedetector@8.0.5:
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.27.0
 
   i18next-fs-backend@2.6.0: {}
 
@@ -17989,9 +17989,8 @@ snapshots:
       '@remix-run/router': 1.23.0
       react: 18.2.0
 
-  react-router@7.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-router@7.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      '@types/cookie': 0.6.0
       cookie: 1.0.2
       react: 18.2.0
       set-cookie-parser: 2.7.1
