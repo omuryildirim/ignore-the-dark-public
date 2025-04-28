@@ -10,14 +10,14 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.149",
-    "@types/node": "22.14.1",
+    "@types/node": "22.15.3",
     "@types/uuid": "10.0.0",
     "typescript": "5.8.3",
-    "vitest": "3.1.1"
+    "vitest": "3.1.2"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "3.788.0",
-    "@aws-sdk/lib-dynamodb": "3.789.0",
+    "@aws-sdk/client-dynamodb": "3.797.0",
+    "@aws-sdk/lib-dynamodb": "3.797.0",
     "uuid": "11.1.0"
   }
 }
