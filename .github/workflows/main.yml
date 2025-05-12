@@ -3,7 +3,7 @@ name: main
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - aws/** # Only triggers on changes in the aws folder
   workflow_dispatch:
