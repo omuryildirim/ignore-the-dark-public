@@ -3,7 +3,7 @@ name: Deploy Workers
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - cloudflare/** # Only triggers on changes in the worker folder
 
