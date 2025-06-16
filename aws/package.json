@@ -17,8 +17,8 @@
   "author": "omuryildirim",
   "license": "MIT",
   "devDependencies": {
-    "@tsconfig/node20": "20.1.5",
-    "aws-cdk-lib": "2.200.1",
+    "@tsconfig/node20": "20.1.6",
+    "aws-cdk-lib": "2.201.0",
     "constructs": "10.4.2",
     "exifreader": "^4.31.0",
     "image-thumbnail": "^1.0.15",
