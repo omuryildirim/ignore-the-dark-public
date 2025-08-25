@@ -12,8 +12,8 @@
   "author": "omuryildirim",
   "license": "MIT",
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250816.0",
+    "@cloudflare/workers-types": "4.20250823.0",
     "typescript": "5.9.2",
-    "wrangler": "4.30.0"
+    "wrangler": "4.32.0"
   }
 }
