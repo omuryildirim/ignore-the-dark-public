@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Route Worker
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy API Worker
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Photography Worker
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
