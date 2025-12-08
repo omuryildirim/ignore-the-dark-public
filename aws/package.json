@@ -17,13 +17,13 @@
   "author": "omuryildirim",
   "license": "MIT",
   "devDependencies": {
-    "@tsconfig/node20": "20.1.6",
-    "aws-cdk-lib": "2.222.0",
+    "@tsconfig/node20": "20.1.8",
+    "aws-cdk-lib": "2.232.1",
     "constructs": "10.4.3",
-    "exifreader": "^4.32.0",
+    "exifreader": "^4.33.1",
     "image-thumbnail": "^1.0.15",
     "sst": "2.45.1",
-    "turbo": "2.6.0",
+    "turbo": "2.6.3",
     "typescript": "5.9.3"
   }
 }
