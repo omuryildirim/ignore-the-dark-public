@@ -17,14 +17,14 @@ jobs:
   lint-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/lint
 #
 #  deploy:
 #    needs: lint-build
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/checkout@v5
+#      - uses: actions/checkout@v6
 #      - uses: ./.github/actions/oidc
 #        with:
 #          role: ${{ vars.DEPLOY_ROLE }}
