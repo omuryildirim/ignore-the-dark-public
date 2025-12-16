@@ -37,7 +37,7 @@
     "react-i18next": "15.7.3",
     "react-router": "7.10.1",
     "remix-i18next": "6.4.1",
-    "sass": "1.94.2",
+    "sass": "1.96.0",
     "tsparticles": "3.9.1",
     "vivus": "0.4.6"
   },
