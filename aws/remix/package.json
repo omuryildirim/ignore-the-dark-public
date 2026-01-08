@@ -22,7 +22,7 @@
     "@mui/x-data-grid": "6.20.4",
     "@remix-run/css-bundle": "2.17.2",
     "@remix-run/node": "2.17.2",
-    "@remix-run/react": "2.17.2",
+    "@remix-run/react": "2.17.3",
     "@remix-run/serve": "2.17.2",
     "@tsparticles/engine": "3.9.1",
     "@tsparticles/react": "3.0.0",
