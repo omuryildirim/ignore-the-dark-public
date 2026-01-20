@@ -20,10 +20,10 @@
     "@emotion/styled": "11.14.1",
     "@mui/material": "6.4.8",
     "@mui/x-data-grid": "6.20.4",
-    "@remix-run/css-bundle": "2.17.3",
-    "@remix-run/node": "2.17.3",
-    "@remix-run/react": "2.17.3",
-    "@remix-run/serve": "2.17.3",
+    "@remix-run/css-bundle": "2.17.4",
+    "@remix-run/node": "2.17.4",
+    "@remix-run/react": "2.17.4",
+    "@remix-run/serve": "2.17.4",
     "@tsparticles/engine": "3.9.1",
     "@tsparticles/react": "3.0.0",
     "@types/vivus": "0.4.7",
@@ -42,7 +42,7 @@
     "vivus": "0.4.6"
   },
   "devDependencies": {
-    "@remix-run/dev": "2.17.3",
+    "@remix-run/dev": "2.17.4",
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.15",
     "typescript": "5.9.3"
