@@ -91,8 +91,8 @@ importers:
         specifier: 3.9.1
         version: 3.9.1
       '@tsparticles/react':
-        specifier: 3.0.0
-        version: 3.0.0(@tsparticles/engine@3.9.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 4.0.2
+        version: 4.0.2(@tsparticles/engine@3.9.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@types/vivus':
         specifier: 0.4.7
         version: 0.4.7
@@ -3295,10 +3295,10 @@ packages:
   '@tsparticles/plugin-rgb-color@3.9.1':
     resolution: {integrity: sha512-SBxk7f1KBfXeTnnklbE2Hx4jBgh6I6HOtxb+Os1gTp0oaghZOkWcCD2dP4QbUu7fVNCMOcApPoMNC8RTFcy9wQ==}
 
-  '@tsparticles/react@3.0.0':
-    resolution: {integrity: sha512-hjGEtTT1cwv6BcjL+GcVgH++KYs52bIuQGW3PWv7z3tMa8g0bd6RI/vWSLj7p//NZ3uTjEIeilYIUPBh7Jfq/Q==}
+  '@tsparticles/react@4.0.2':
+    resolution: {integrity: sha512-mwO9cDoSWIBqeA7rm4fi/Co3Y6egADefr6ryRXsyiZolOCTlSA8J8B8hz69ypqdiQrAnuku9X+S71rw2ba6kyg==}
     peerDependencies:
-      '@tsparticles/engine': ^3.0.2
+      '@tsparticles/engine': workspace:^
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
@@ -13983,7 +13983,7 @@ snapshots:
     dependencies:
       '@tsparticles/engine': 3.9.1
 
-  '@tsparticles/react@3.0.0(@tsparticles/engine@3.9.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@tsparticles/react@4.0.2(@tsparticles/engine@3.9.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@tsparticles/engine': 3.9.1
       react: 18.2.0
